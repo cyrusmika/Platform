@@ -1,15 +1,20 @@
+// set the canvas "resolution" to the screen
 let canvas = document.getElementById("display")
-
-console.log(canvas)
-
 canvas.width = document.body.clientWidth
 canvas.height = document.body.clientHeight
+
+//create 2D context object for drawing on the canvas
 let ctx = canvas.getContext("2d")
 
-console.log(ctx)
-
-ctx.fillStyle = "red"
+//draw a blue rectangle the size of the screen
+ctx.fillStyle = "lightblue"
 ctx.fillRect(0, 0, canvas.width , canvas.height)
 
-ctx.fillStyle = "orange"
-ctx.fillRect(0,0, 400, 100)
+//draw a smaller red rectangle "on top"
+ctx.fillStyle = "red"
+ctx.fillRect(
+	-200, 
+	200, 
+	400, 
+	100
+)
