@@ -3,6 +3,7 @@ let hero = new Hero()
 let keyPressed = {}
 ERASE()
 hero.draw()
+
 window.addEventListener("keydown", event => {
 	keyPressed[event.code] = true 
 })
@@ -17,11 +18,12 @@ function loop(){
 		hero.moveLeft()
 	}
 	if (keyPressed["ArrowUp"]) {
-		hero.moveUp()
+		hero.jump()
 	}
-	if (keyPressed["ArrowDown"]) {
-		hero.moveDown()
-	}
+	
+	
+	hero.step()
+
 	ERASE()
 
 	hero.draw()
